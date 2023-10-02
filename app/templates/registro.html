@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="preload" href="{{normalizacioncss}}" as="style">
+    <link rel="stylesheet" href="{{normalizacioncss}}">
+    <link rel="preload" href="{{css}}" as="style">
+    <link rel="stylesheet" href="{{css}}">
+    
+</head>
+<body>
+    <header id="header">
+        <div class="contenedorLogo">
+            <img class="logo" src="{{logo}}" alt="logo">
+        </div>
+    </header>
+    <main id="main">
+        <div class="contenedor sombra">
+            <form method="POST" id="frmDatos" action="" enctype=multipart/form-data> 
+                <legend>Registrarse</legend>
+                <div class="campos">
+                    <h3>Te damos la bienvenida a Conectados</h3>
+                    <!-- Foto de perfil -->
+                    <div class="profile-pic-div">
+                        <img id="photo">
+                        <label for="file" id="uploadbtn">Foto de perfil</label>
+                        <input type=file name=file id="file" required>
+                    </div>
+                    <!-- Fin foto de perfil -->
+                        <input type="text" placeholder="Pais" name="Pais" id="Pais" required>
+                        <input type="text" placeholder="Nombre de usuario" name="nombre" id="nombre">
+                        <input type="email" placeholder="Correo electrónico" name="correo" id="correo">
+                        <input type="password" placeholder="Contraseña" name = "clave" id="contraseña">
+                        <div class="registro">
+                            <p>¿Ya estás en Conectados? <a href="/inicioSesion">Iniciar Sesión</a></p> 
+                        </div>
+                        <input type="submit" value="Continúa" id="enviar">
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer id="footer">
+      
+    </footer>
+    <script src="{{scriptregistro}}"></script>
+</body>
+</html>

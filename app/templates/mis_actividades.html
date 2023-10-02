@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv =»Cache-Control» content =»no-cache»/>
+    <title>Conectados</title>
+    <link rel="stylesheet" href="{{css}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id= "check">
+        <label for="check" class="checkbtn">
+            <li class="fas fa-bars"></li>
+        </label>
+
+        <img src="{{logo}}" class="logo">
+        <ul>
+            <li><a href="/" id="inicio">Inicio</a></li>
+            <li><a href="mis_actividades" id="miactiv">Mis actividades</a></li>
+            <li><a href="nueva_actividad" id="newact">Nueva actividad</a></li>
+            <li><a href="cuenta" id="micuenta">Cuenta</a></li>
+			<li><a href="cerrar_sesion" id="cerrar_sesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenido contenedor">
+        <section class="hacer">
+            <div class="nuevo">
+                <h2>Mis actividades</h2>
+                <button type="button" class="btn-nuevo" id="newact" onclick="window.location = 'nueva_actividad';">Nueva actividad</button>
+                <!-- ESTE BUTTON TENDRIA QUE MANDAR A NUEVA_ACTIVIDAD PARA CREAR UN EVENTO-->
+            </div>
+            <div class="contenedor-cards">
+                <!--FOR DE MOSTRAR TODOS LOS EVENTOS CREADOS DEL USUARIO-->
+                {% for row in creados %}
+                <div class="card">
+                    <img src="/static/{{row[3]}}">
+                    <div class="info">
+                        <p class="categoria">{{row[4]}}</p>
+                        <p class="titulo">{{row[1]}}</p>
+                        <p class="precio">Q{{row[2]}}</p>
+                        <a href="editar_actividad/{{row[0]}}">Editar actividad...</a>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                
+            </div><!--se mantiene este div-->
+        </section>
+
+    
+        <section class="hacer">
+            <h2>Actividades futuras</h2>
+            <div class="contenedor-cards">
+                <!--FOR DEL DIC CON EVENTOS REGISTRADOS-->
+
+                {% for row in registrados %}
+                <div class="card_futuras">
+                    <img src="/static/{{row[3]}}">
+                    <div class="info">
+                        <p class="categoria">{{row[6]}}</p>
+                        <p class="titulo">{{row[1]}}</p>
+                        <p class="categoria">Fecha de la actividad: {{row[4]}}</p>
+                        <p class="categoria">Hora de la actividad: {{row[5]}}</p>
+                        <form action="#" method="POST">
+                            <input type="hidden" name="id" value="{{row[0]}}">
+                            <input type="submit" name="eliminar" value="eliminar"class="btn-eliminar">
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="contenedor-cards contenedor">
+            <div class="nav-footer">
+                <h3>Conectados.com</h3>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

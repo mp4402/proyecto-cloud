@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv =»Cache-Control» content =»no-cache»/>
+    <title>Conectados</title>
+    <link rel="stylesheet" href="{{css}}">
+</head>
+<body>
+    <div class="hero">
+        <header class="header contenedor">
+            <div class="logo">
+                <img src="{{logoConectados}}">
+            </div>
+            <nav class="navegacion">   
+                 <a href="mis_actividades" id="miactiv">Mis actividades</a> 
+                 <a href="nueva_actividad" id="newact">Nueva actividad</a>  
+                 <a href="cuenta" id="micuenta">Cuenta</a>  
+                 <a href="cerrar_sesion" id="cerrar_sesion">Cerrar Sesión</a>  
+            </nav>
+        </header>
+        <div class="contenido-hero contenedor">
+            <h1>Encuentra las mejores experiencias en linea</h1>
+            <form action="#" method="POST"> 
+                <!--Cambiar el nombre de las categorias-->
+                <select type="text" name="busqueda" class="busqueda" placeholder="Buscar etiqueta de la actividad">
+                    
+                    <option value="0" selected="">Escoger una categoria...</option>
+                    {% for row in categorias %}
+                    <option value="{{row[0]}}" id="{{row[0]}}">{{row[1]}}</option>
+                    {% endfor %}
+                    <option value="0">Todas las categorias</option>
+                </select>
+                <!---->
+                <input type="submit" value="buscar" id="buscar">
+            </form>
+        </div>
+    </div>
+
+    <main class="contenido contenedor">
+        <section class="hacer">
+            <h2>Experiencias</h2>
+            <div class="contenedor-cards">
+                <!-- for del diccionario que tenga toda la info de cada evento.-->
+                {% for row in records %}
+                <div class="card">
+                    <img src="/static/{{row[3]}}">
+                    <div class="info">
+                        <p class="categoria">{{row[4]}}</p><!--ROW[4]-->
+                        <p class="titulo">{{row[1]}}</p>
+                        <p class="precio">Q{{row[2]}}</p>
+                        <a href="informacion_actividad/{{row[0]}}" id="info:{{row[0]}}">Mas informacion...</a>
+                        <!-- HAY QUE HACER UN FORM QUE ENVIE LA INFO DEL EVENTO que se manda el id del evento-->
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- se termina el for-->
+               
+            </div><!-- este div se queda-->
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="contenedor-cards contenedor">
+            <div class="nav-footer">
+                <h3>Conectados.com</h3>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

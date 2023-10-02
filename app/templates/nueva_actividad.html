@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="preload" href="{{normalizacioncss}}" as="style">
+    <link rel="stylesheet" href="{{normalizacioncss}}">
+    <link rel="preload" href="{{css}}" as="style">
+    <link rel="stylesheet" href="{{css}}">
+</head>
+<body>
+    <!--Navegacion-->
+    <nav>
+        <input type="checkbox" id= "check">
+        <label for="check" class="checkbtn">
+            <li class="fas fa-bars"></li>
+        </label>
+
+        <img src="{{logo}}" class="logo">
+        <ul>
+            <li><a href="/" id="inicio">Inicio</a></li>
+            <li><a href="mis_actividades" id="miactiv">Mis actividades</a></li>
+            <li><a href="nueva_actividad" id="newact">Nueva actividad</a></li>
+            <li><a href="cuenta" id="micuenta">Cuenta</a></li>
+			<li><a href="cerrar_sesion" id="cerrar_sesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+     <!--Navegacion-->
+    <main id="main">
+        <div class="cont sombra">
+            <form class="formulario" method="POST" action="" enctype=multipart/form-data>
+                <div class="principal">
+                    <h2>Agregar Actividad</h2>
+                    <div class="formulario-grupo fila1">
+                        <label for="nombre">Nombre de la actividad</label>
+                        <input id="nombre" name="nombre" class="nombre" type="text" required>
+                    </div>
+                    <div class="formulario-grupo fila2">
+                        <label for="descripcion">Descripcion de la actividad</label>
+                        <textarea class="descripcion" name = "descripcion" rows="3" required="" id="descripcion"></textarea>
+                    </div>
+                    <div class="formulario-grupo fila3">
+                        <label for="categoria">Categoria de la actividad</label>
+                        <select class="categoria" name="categoria" id="categoria">
+                            <option selected="">Select category</option>
+                            {% for row in categorias %}
+                            <option value="{{row[0]}}" id="{{row[0]}}">{{row[1]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="formulario-row fila4" name='1'>
+                        <div class="formulario-grupo row1" name='2'> 
+                            <label for="fecha">Fecha de la actividad</label>
+                            <input id="fecha" name="fecha" class="fecha" type="datetime-local" required>
+                        </div>
+                        <div class="formulario-grupo row2">
+                            <label for="precio">Precio</label>
+                            <input id="precio" name = "precio" class="precio" type="text" required>
+                        </div>
+                    </div>
+
+                <div class="contenedor-imagenes">
+                    <div class="profile-pic-div1">
+                        <img id="photo1">
+                        <input type=file name=file1 id="file1" required>
+                        <label for="file1" name="file1" id="uploadbtn1">Foto de portada de Actividad:</label>
+                    </div>
+                 </div>
+                 <input type="submit" value="Enviar" id="enviar">
+            </form>
+        </div>
+    </main>
+</footer>
+<script src="{{scriptNuevaActividad}}"></script>
+</body>
+</html>
