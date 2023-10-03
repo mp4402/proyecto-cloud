@@ -12,7 +12,7 @@ def openConnection():# Set up a connection to the postgres server.
     conn = psycopg2.connect(host="localhost",
                             user="postgres",
                             port=5432,
-                            database="docker",
+                            database="postgres",
                             password="postgres")
 
 UPLOAD_FOLDER = os.getcwd() + '/static'

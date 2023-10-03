@@ -1,32 +1,23 @@
 version: "3.3"
 services:
-  vote:
+  app:
     build: ./app
     depends_on:
       - db
     ports: 
       - "80:80"
-    networks: 
-      - network-backend
   db:
-    image: postgres
+    image: postgres:10.5
     restart: always
     environment:
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
-      APP_DB_USER: docker
-      APP_DB_PASS: docker
-      APP_DB_NAME: docker
-    depends_on:
-      - result
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    networks: 
-      - network-backend
-
-volumes:
-    postgres_data:
-
-networks:
-  network-backend:
-      driver: bridge
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      - '5438:5432'
+    volumes: 
+      # copy the sql script to create tables
+      - ./database/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
