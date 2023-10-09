@@ -1,7 +1,6 @@
-from flask.helpers import _endpoint_from_view_func,url_for
-from flask import Flask, request, redirect, session, jsonify, Response
-from jinja2 import Template, Environment, FileSystemLoader
-from jinja2.environment import create_cache
+from flask.helpers import url_for
+from flask import Flask, request, redirect, session, jsonify
+from jinja2 import Environment, FileSystemLoader
 from werkzeug.utils import secure_filename
 import os
 from datetime import datetime
@@ -9,11 +8,12 @@ import psycopg2
 conn = ""
 def openConnection():# Set up a connection to the postgres server.
     global conn
-    conn = psycopg2.connect(host="localhost",
+    conn = psycopg2.connect(host=os.environ['DB_HOST'],
                             user="postgres",
                             port=5432,
                             database="postgres",
                             password="postgres")
+    # conn = psycopg2.connect("dbname=postgres user=postgres")
 
 UPLOAD_FOLDER = os.getcwd() + '/static'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -22,7 +22,6 @@ File_loader = FileSystemLoader("templates")
 env = Environment(loader=File_loader)
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.secret_key = "contraseña"
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -158,7 +157,8 @@ def regristro():
                 cursor.execute(sql_command, )
                 records = cursor.fetchall()
                 for row in records:
-                    session['sesion'] = row[0]
+                    print(row)
+                    #session['sesion'] = row[0]
                 cursor.close()
                 conn.close()
                 return redirect("/") 
@@ -190,6 +190,7 @@ def inicioSesion():
                 return template.render(css=css,normalizacioncss=normalizacioncss,logo=logo,mensaje="Correo o contraseña erronea")
             else:
                 for row in records:
+                    print(row)
                     session['sesion'] = row[0]
                 cursor.close()
                 conn.close()
@@ -755,4 +756,4 @@ def test_editar_actividad(idActividad = None):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port="3000")
