@@ -22,7 +22,7 @@ File_loader = FileSystemLoader("templates")
 env = Environment(loader=File_loader)
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
+app.secret_key = "key"
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -158,7 +158,7 @@ def regristro():
                 records = cursor.fetchall()
                 for row in records:
                     print(row)
-                    #session['sesion'] = row[0]
+                    session['sesion'] = row[0]
                 cursor.close()
                 conn.close()
                 return redirect("/") 
