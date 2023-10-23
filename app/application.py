@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 import os
 from datetime import datetime
 import psycopg2
+import boto3
 conn = ""
 def openConnection():# Set up a connection to the postgres server.
     global conn
@@ -17,6 +18,8 @@ def openConnection():# Set up a connection to the postgres server.
 
 UPLOAD_FOLDER = os.getcwd() + '/static'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
+#os.environ['DB_HOST']
 
 File_loader = FileSystemLoader("templates")
 env = Environment(loader=File_loader)
@@ -55,7 +58,21 @@ def aMayuscula(records):
         records[row] = tuple(records[row])
     return records
 
+# upload S3
+def upload_image(file, image_key, _from):
+    s3_client = boto3.client('s3', 
+                      aws_access_key_id="AKIA2E2AWQWNELTBD3MY", 
+                      aws_secret_access_key="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", 
+                      region_name='us-east-1'
+                      )
 
+    BUCKET = "conectadosfiles"
+    IMAGE_KEY = image_key
+    # Upload in-memory object to S3 bucket
+    if (_from == 1):
+        s3_client.put_object(Body=file, Bucket=BUCKET, Key=f"UserPhotos/{IMAGE_KEY}", ContentType=file.content_type)
+    else:
+        s3_client.put_object(Body=file, Bucket=BUCKET, Key=f"EventPhotos/{IMAGE_KEY}", ContentType=file.content_type)
 
 
 
@@ -135,7 +152,8 @@ def regristro():
         if file and allowed_file(file.filename):
             print("Archivo seleccionado")
             filename = nombre + "_" + secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            upload_image(file, filename, 1)
+            path_image = f"https://conectadosfiles.s3.us-east-1.amazonaws.com/UserPhotos/{filename}"
             openConnection()
             cursor = conn.cursor()
             sql_command = "SELECT id FROM public.user_data WHERE  public.user_data.correo = %s;"
@@ -150,7 +168,7 @@ def regristro():
                 openConnection()
                 cursor = conn.cursor()
                 sql_command = "INSERT INTO public.user_data (correo, contrasena, nombre_usuario, pais, path_foto)VALUES (%s, %s, %s, %s, %s);"
-                cursor.execute(sql_command, (email,clave,nombre,pais, filename, ))
+                cursor.execute(sql_command, (email,clave,nombre,pais, path_image, ))
                 conn.commit()
                 #SELECT DEL ID DEL USUARIO CREADO
                 sql_command = "SELECT id FROM public.user_data ORDER BY user_data.id DESC LIMIT 1;"
@@ -229,12 +247,13 @@ def nueva_actividad():
         if file and allowed_file(file.filename):
             print("Archivo seleccionado")
             filename = nombre + "_fotoPortada_" + secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            upload_image(file, filename, 2)
+            path_image = f"https://conectadosfiles.s3.us-east-1.amazonaws.com/EventPhotos/{filename}"
         #INSERT en la tabla de eventos creados.
         openConnection()
         cursor = conn.cursor()
         sql_command = "INSERT INTO public.evento_data(nombre, description, fecha, hora, precio, path_foto_p)VALUES (%s, %s, %s, %s, %s, %s);"
-        cursor.execute(sql_command, (nombre, descripcion, fecha, hora, precio, filename, ))
+        cursor.execute(sql_command, (nombre, descripcion, fecha, hora, precio, path_image, ))
         conn.commit()
         #SELECT DEL ID DEL EVENTO CREADO
         sql_command = "SELECT id FROM public.evento_data ORDER BY evento_data.id DESC LIMIT 1;"
