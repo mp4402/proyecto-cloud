@@ -15,3 +15,15 @@ services:
         volumes: 
           # copy the sql script to create tables
           - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+# db:
+#     image: postgres:10.5
+#     restart: always
+#     environment:
+#       - POSTGRES_USER=postgres
+#       - POSTGRES_PASSWORD=postgres
+#     ports:
+#       - '5432:5432'
+#     volumes: 
+#       # copy the sql script to create tables
+#       - ./database/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+  

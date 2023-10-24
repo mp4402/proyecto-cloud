@@ -9,7 +9,7 @@ import boto3
 conn = ""
 def openConnection():# Set up a connection to the postgres server.
     global conn
-    conn = psycopg2.connect(host="database-1.c4lnyuhwody1.us-east-1.rds.amazonaws.com",
+    conn = psycopg2.connect(host=os.environ['DB_HOST'],
                             user="postgres",
                             port=5432,
                             database="postgres",

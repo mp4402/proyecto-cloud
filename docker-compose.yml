@@ -1,21 +1,8 @@
 version: "3.3"
 services:
-  db:
-    image: postgres:10.5
-    restart: always
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-    ports:
-      - '5432:5432'
-    volumes: 
-      # copy the sql script to create tables
-      - ./database/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
   app:
     build: ./app
-    depends_on:
-      - db
     ports: 
       - "3000:3000"
     environment:
-      - DB_HOST=db
+      - DB_HOST=database-1.c4lnyuhwody1.us-east-1.rds.amazonaws.com
