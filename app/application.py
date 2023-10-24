@@ -61,8 +61,8 @@ def aMayuscula(records):
 # upload S3
 def upload_image(file, image_key, _from):
     s3_client = boto3.client('s3', 
-                      aws_access_key_id="AKIA2E2AWQWNELTBD3MY", 
-                      aws_secret_access_key="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", 
+                      aws_access_key_id="", 
+                      aws_secret_access_key="", 
                       region_name='us-east-1'
                       )
 
