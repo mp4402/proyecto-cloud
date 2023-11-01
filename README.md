@@ -3,10 +3,17 @@ Conectados es una plataforma destinada a proveer y encontrar tu actividad ideal,
 Proyecto Final del curso Automation Testing
 Prueba para el CI
 
-# Involucrados
+## Involucrados
 
-# Servicios a utilizar
+## Servicios a utilizar
 * Amazon S3
 * Amazon RDS
 * Kubernetes Engine Google Cloud
-# 
+# Prerequisitos
+
+# Configuración de la nube
+## Amazon
+### S3
+### RDS
+## Google
+### Kubernetes
