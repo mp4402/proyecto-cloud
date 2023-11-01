@@ -14,6 +14,8 @@ Prueba para el CI
 # Configuración de la nube
 ## Amazon
 ### S3
+- Recuerda que para poder seguir estos pasos debes contar con una cuena en Amazon Console
+
 ### RDS
 ## Google
 ### Kubernetes
