@@ -26,7 +26,7 @@ Recuerda que para poder seguir estos pasos debes contar con una cuena en Amazon 
 * Al tener el bucket levantado, entra y ve a la sección de Permissions -> Bucket Policy:
 ![image](https://github.com/mp4402/proyecto-cloud/assets/61555440/bf0f1d1c-4357-45d1-b47e-85940e92c7a3)
 * En ella copia esto:
-'''
+```
 {
     "Version": "2012-10-17",
     "Id": "Policy1698024307293",
@@ -40,7 +40,7 @@ Recuerda que para poder seguir estos pasos debes contar con una cuena en Amazon 
         }
     ]
 }
-'''
+```
 ### RDS
 ## Google
 ### Kubernetes
