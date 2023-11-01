@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.31.2 (HEAD)
+    kompose.version: 1.26.0 (40646f47)
   creationTimestamp: null
   labels:
     io.kompose.service: app
@@ -18,22 +18,16 @@ spec:
     metadata:
       annotations:
         kompose.cmd: kompose convert
-        kompose.version: 1.31.2 (HEAD)
+        kompose.version: 1.26.0 (40646f47)
       creationTimestamp: null
       labels:
-        io.kompose.network/proyecto-cloud-default: "true"
         io.kompose.service: app
     spec:
       containers:
-        - env:
-            - name: DB_HOST
-              value: database-1.c4lnyuhwody1.us-east-1.rds.amazonaws.com
-          image: app
+        - image: mp4402/proyecto-cloud
           name: app
           ports:
             - containerPort: 3000
-              hostPort: 3000
-              protocol: TCP
           resources: {}
       restartPolicy: Always
 status: {}
