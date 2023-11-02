@@ -13,6 +13,7 @@ Prueba para el CI
 
 # Configuración de la nube
 ## Amazon
+### Grupos de seguridad 
 ### S3
 Recuerda que para poder seguir estos pasos debes contar con una cuena en Amazon Console
 * Ve a la sección servicios y busca S3:
