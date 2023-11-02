@@ -1,29 +1,14 @@
 version: '3.7'
 services:
     postgres:
-        image: postgres:10.5
-        restart: always
+        container_name: base-de-datos
+        image: carlosalvaradodock/database-info
         environment:
-          - POSTGRES_USER=postgres
-          - POSTGRES_PASSWORD=postgres
-        logging:
-          options:
-            max-size: 10m
-            max-file: "3"
+          - PGHOST=database-1.c4lnyuhwody1.us-east-1.rds.amazonaws.com
+          - PGPORT=5432
+          - PGUSER=postgres
+          - PGPASSWORD=postgres
         ports:
           - '5438:5432'
-        volumes: 
-          # copy the sql script to create tables
-          - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
-# db:
-#     image: postgres:10.5
-#     restart: always
-#     environment:
-#       - POSTGRES_USER=postgres
-#       - POSTGRES_PASSWORD=postgres
-#     ports:
-#       - '5432:5432'
-#     volumes: 
-#       # copy the sql script to create tables
-#       - ./database/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
-  
+
+      
