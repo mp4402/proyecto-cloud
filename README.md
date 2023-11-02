@@ -23,9 +23,9 @@ Recuerda que para poder seguir estos pasos debes contar con una cuena en Amazon 
 ![image](https://github.com/mp4402/proyecto-cloud/assets/61555440/209977fe-0abf-4c50-8b44-4ba8a095c805)
 * Deja todo lo demás como te sale y crea el bucket.
 
-* Al tener el bucket levantado, entra y ve a la sección de Permissions -> Bucket Policy:
+* Al tener el bucket levantado, entra y ve a la sección de Permissions -> Bucket policy:
 ![image](https://github.com/mp4402/proyecto-cloud/assets/61555440/bf0f1d1c-4357-45d1-b47e-85940e92c7a3)
-* En ella copia esto:
+* Entra a editar, copia y pega lo siguiente:
 ```
 {
     "Version": "2012-10-17",
@@ -41,6 +41,29 @@ Recuerda que para poder seguir estos pasos debes contar con una cuena en Amazon 
     ]
 }
 ```
+
+* Ve a la sección de Permissions -> Cross-origin resource sharing (CORS):
+![image](https://github.com/mp4402/proyecto-cloud/assets/61555440/6335f43f-a163-4de8-a7bb-a79301d0540f)
+* Entra a editar, copia y pega lo siguiente:
+```
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1698024307293",
+    "Statement": [
+        {
+            "Sid": "Stmt1698024303518",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::conectadosfiles/*"
+        }
+    ]
+}
+```
+
+* Listo con esta configuración ya podrás acceder a la información de tu bucket, regresa a Objects del bucket y crea dos carpetas
+1. Carpeta para las imágenes de usuario
+2. Carpeta para imágenes de las portadas de los eventos
 ### RDS
 ## Google
 ### Kubernetes
