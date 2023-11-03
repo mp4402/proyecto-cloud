@@ -1,4 +1,4 @@
-# Conectados
+![Screenshot 2023-11-02 at 2 11 13 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/f6b44ced-1bc7-4899-963d-6f48f2ce4343)# Conectados
 Conectados es una plataforma destinada a proveer y encontrar tu actividad ideal, aprovecha y conecta con el mundo.
 Proyecto Final del curso Automation Testing
 Prueba para el CI
@@ -77,6 +77,23 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 1. Carpeta para las imágenes de usuario
 2. Carpeta para imágenes de las portadas de los eventos
 ### RDS
+* Ve a la sección servicios y busca RDS:
+![Screenshot 2023-11-03 at 5 50 18 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/0528c616-4a91-41dc-abd7-1f3b60b0a462)
+* Ve a create database / crear base de datos
+* Selecciona la base de datos de Postgres
+![Screenshot 2023-11-02 at 2 10 53 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/22a5c7bd-4380-416c-85a4-915fa3ef1aa6)
+* Selecciona el Free tier
+![Screenshot 2023-11-02 at 2 11 13 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/fd10d6bb-0a85-4865-b358-c8eb2e6a33c9)
+* Pon nombre a la base de datos: db-nombre-proyecto-conectados
+* Pon usuario: postgres
+* Claves: -la clave de ususario- recomendado: postgres
+![Screenshot 2023-11-02 at 2 14 41 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/e3f3fee4-03bf-4b2e-a5de-2cc85e450969)
+
+
+* Deja el resto en Default y ve al apartado de Conectividad / Connectivity
+* Deja el public access activo y agrega el security group que creaste anteriormente
+![Screenshot 2023-11-02 at 2 46 29 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/4c1c7dd5-dece-468e-b2d3-ee86bd4cfc0f)
+
 ## Google
 Recuerda que para poder seguir estos pasos debes contar con una cuenta en Google Cloud Plattform
 
