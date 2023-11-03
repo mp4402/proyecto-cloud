@@ -13,9 +13,20 @@ Prueba para el CI
 
 # Configuración de la nube
 ## Amazon
-### Grupos de seguridad 
-### S3
 Recuerda que para poder seguir estos pasos debes contar con una cuena en Amazon Console
+### Grupos de seguridad 
+*Este apartado será de utilidad para la base de datos*
+
+* Ve a la sección servicios y busca EC2:
+![image](https://github.com/mp4402/proyecto-cloud/assets/69279232/2f05266c-56ff-41c9-aa7f-4122033bb558)
+* En la barra lateral de la izquiera busca el apartado *Red y seguridad* y selecciona *Security Groups*
+* Selecciona *Crear grupo de seguridad*
+* Ingresa el nombre deseado para el grupo de seguridad (por ejemplo 'acceso_db') y agrega una descripción del grupo de seguridad
+* Agrega una nueva regla de entrada de la siguiente forma:
+  ![image](https://github.com/mp4402/proyecto-cloud/assets/69279232/f3f5e0f3-ef95-4d9c-b114-08a6c73f1c3e)
+* Finalmente, crea el grupo de seguridad
+
+### S3
 * Ve a la sección servicios y busca S3:
 ![image](https://github.com/mp4402/proyecto-cloud/assets/61555440/3c28d446-b9df-448d-9b3d-e2642959c4cc)
 * Ve a create bucket
