@@ -13,7 +13,7 @@ Prueba para el CI
 
 # Configuración de la nube
 ## Amazon
-Recuerda que para poder seguir estos pasos debes contar con una cuena en Amazon Console
+Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon Console
 ### Grupos de seguridad 
 *Este apartado será de utilidad para la base de datos*
 
@@ -78,4 +78,54 @@ Recuerda que para poder seguir estos pasos debes contar con una cuena en Amazon 
 2. Carpeta para imágenes de las portadas de los eventos
 ### RDS
 ## Google
+Recuerda que para poder seguir estos pasos debes contar con una cuenta en Google Cloud Plattform
+
 ### Kubernetes
+* Busca *kubernetes* y selecciona *Kubernetes engine*
+![image](https://github.com/mp4402/proyecto-cloud/assets/69279232/62936ea9-7733-4109-a60b-c24066c98b73)
+* Selecciona *Crear*
+* Ingresa un nombre para el clúster (por ejemplo conectados-app) y click en *Crear*
+![image](https://github.com/mp4402/proyecto-cloud/assets/69279232/f933060e-1e8b-47db-8d61-2153ad1bbbdf)
+* Mientras el clúster se crea, puede tomar un tiempo, instalaremos software necesario
+* Descarga Gcloud utilizando los siguientes comandos
+  * Windows  
+  ```
+  (New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe")
+
+  & $env:Temp\GoogleCloudSDKInstaller.exe
+    
+  ```
+  
+* Inicia Gcloud, te pedirá que inicies sesión y crear un proyecto
+* En la terminal normal de la PC se instalará gke-gcloud-auth-plugin y kubectl. Ejecuta los siguientes comandos:
+  * gke-gcloud-auth-plugin
+    ```
+    gcloud components install gke-gcloud-auth-plugin
+    ```
+    Espera a que termine la instalación, esto puede tomar un tiempo, al acabar deberás ver esta pantalla:
+    ![image](https://github.com/mp4402/proyecto-cloud/assets/69279232/f846f5bd-839e-4597-973d-57857e018b38)
+
+  *  kubectl
+    ```
+    gcloud components install kubectl
+    ```
+    
+*   En la consola de Gcloud dirigete a la carpeta del proyecto utilizando *cd*
+*   Ejecuta el comando para conectarte al clúster. Lo obtienes al clickear *Conectar* el clúster creado
+![image](https://github.com/mp4402/proyecto-cloud/assets/69279232/3cb66780-51dd-4f31-98c9-d217969f1203)
+*   Ejecuta los siguientes comandos:
+  ```
+  kubectl apply -f app-deployment.yaml
+  ```
+  ```
+  kubectl get pods
+  ```
+  *Espera a que READY esté en 1/1*
+  ```
+  kubectl apply -f app-service.yaml
+  ```
+
+  ```
+  kubectl get services
+  ```
+  *De la IP generada podrás acceder a la app en el puerto 3000*
