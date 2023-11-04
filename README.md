@@ -121,12 +121,12 @@ docker compose up
 docker exec -it base-de-datos psql -f backup.sql --host [Endpoint] --port [port] --username [postgres]
 ```
 * Cuando ejecutes este comando, entraras a la terminal de tu contenedor y tendrás un mensaje de esperando la contraseña:
-      Password:
-* Introduce la contraseña que habías establecido en tu RDS
-* Debes tener un print como este:
 
 ![Screenshot 2023-11-03 at 6 25 45 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/d135b869-4b29-4030-8235-2c156dde9527)
 
+* Introduce la contraseña que habías establecido en tu RDS
+* Debes tener un print como este:
+[imagen]
 ##### Comprobación de creación
 * Este paso es opcional, solo es por si deseas confirmar si se ha realizado el script en tu postgres RDS
 * Entra al contenedor que cuenta con postgres
