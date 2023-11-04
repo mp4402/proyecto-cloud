@@ -1,4 +1,4 @@
-![Screenshot 2023-11-02 at 2 11 13 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/f6b44ced-1bc7-4899-963d-6f48f2ce4343)# Conectados
+# Conectados
 Conectados es una plataforma destinada a proveer y encontrar tu actividad ideal, aprovecha y conecta con el mundo.
 Proyecto Final del curso Automation Testing
 Prueba para el CI
