@@ -77,22 +77,37 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 1. Carpeta para las imágenes de usuario
 2. Carpeta para imágenes de las portadas de los eventos
 ### RDS
+#### Creación RDS
 * Ve a la sección servicios y busca RDS:
+  
 ![Screenshot 2023-11-03 at 5 50 18 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/0528c616-4a91-41dc-abd7-1f3b60b0a462)
 * Ve a create database / crear base de datos
 * Selecciona la base de datos de Postgres
+  
 ![Screenshot 2023-11-02 at 2 10 53 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/22a5c7bd-4380-416c-85a4-915fa3ef1aa6)
 * Selecciona el Free tier
+  
 ![Screenshot 2023-11-02 at 2 11 13 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/fd10d6bb-0a85-4865-b358-c8eb2e6a33c9)
 * Pon nombre a la base de datos: db-nombre-proyecto-conectados
 * Pon usuario: postgres
 * Claves: -la clave de ususario- recomendado: postgres
+  
 ![Screenshot 2023-11-02 at 2 14 41 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/e3f3fee4-03bf-4b2e-a5de-2cc85e450969)
-
 
 * Deja el resto en Default y ve al apartado de Conectividad / Connectivity
 * Deja el public access activo y agrega el security group que creaste anteriormente
+  
 ![Screenshot 2023-11-02 at 2 46 29 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/4c1c7dd5-dece-468e-b2d3-ee86bd4cfc0f)
+
+* Crea la base de datos
+* Entra a la base de datos:
+* En ella en el primer menú, estaras en el apartado de: Connectivity & Security
+
+![Screenshot 2023-11-03 at 6 00 20 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/88e44151-16aa-4cfe-8ac1-db28932b752b)
+
+* Toma nota del: Endpoint y Port.
+* Estos nos serviran más adelante.
+#### Creación de tablas 
 
 ## Google
 Recuerda que para poder seguir estos pasos debes contar con una cuenta en Google Cloud Plattform
