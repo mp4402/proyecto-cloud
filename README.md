@@ -10,7 +10,9 @@ Prueba para el CI
 * Amazon RDS
 * Kubernetes Engine Google Cloud
 # Prerequisitos
-
+```
+git clone https://github.com/mp4402/proyecto-cloud.git
+```
 # Configuración de la nube
 ## Amazon
 Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon Console
@@ -108,6 +110,44 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 * Toma nota del: Endpoint y Port.
 * Estos nos serviran más adelante.
 #### Creación de tablas 
+* Ve a la carpeta database del proyecto
+* Abre una terminal en la carpeta
+```
+docker compose up
+```
+* Habre una nueva pestaña de tu terminal
+* Teniendo el contenedor levantado, harémos un comando para conectarnos al contenedor y ejecutar el script de creación de tablas para la base de datos
+```
+docker exec -it base-de-datos psql -f backup.sql --host [Endpoint] --port [port] --username [postgres]
+```
+* Cuando ejecutes este comando, entraras a la terminal de tu contenedor y tendrás un mensaje de esperando la contraseña:
+      Password:
+* Introduce la contraseña que habías establecido en tu RDS
+* Debes tener un print como este:
+![Screenshot 2023-11-03 at 6 25 45 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/d135b869-4b29-4030-8235-2c156dde9527)
+
+##### Comprobación de creación
+* Este paso es opcional, solo es por si deseas confirmar si se ha realizado el script en tu postgres RDS
+* Entra al contenedor que cuenta con postgres
+```
+docker exec -it base-de-datos psql --host [Endpoint] --port [port] --username [portgres]
+```
+* Vuelve a ingresar la contraseña, tal y como lo hiciste la vez anterior:
+![Screenshot 2023-11-03 at 6 25 45 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/7be3849c-0e26-4207-9d97-23f1bbd3f8b7)
+* Al estar en la terminal de postgres, deberás tener este resultado:
+![Screenshot 2023-11-03 at 6 27 29 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/aca90dd3-ac23-417a-a0c1-ea0acdf49274)
+* En esa terminal ejecuta este comando:
+```
+\d
+```
+* Debes de tener este resultado:
+![Screenshot 2023-11-03 at 6 28 40 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/d7b64b31-8413-4c1a-b46a-473d922b800e)
+* Listo, esto significa  que si pudiste hacer los cambios
+#####
+* Luego de eso, baja el contenedor:
+```
+docker compose down
+```
 
 ## Google
 Recuerda que para poder seguir estos pasos debes contar con una cuenta en Google Cloud Plattform
