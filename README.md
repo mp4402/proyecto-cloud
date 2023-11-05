@@ -136,7 +136,7 @@ docker exec -it base-de-datos psql -f backup.sql --host [Endpoint] --port [port]
 * Este paso es opcional, solo es por si deseas confirmar si se ha realizado el script en tu postgres RDS
 * Entra al contenedor que cuenta con postgres
 ```
-docker exec -it base-de-datos psql --host [Endpoint] --port [port] --username [portgres]
+ocker exec -it base-de-datos psql --host [Endpoint]  --port 5432  --username postgres
 ```
 * Vuelve a ingresar la contraseña, tal y como lo hiciste la vez anterior:
 
