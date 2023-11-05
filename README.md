@@ -65,19 +65,22 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 ![image](https://github.com/mp4402/proyecto-cloud/assets/61555440/6335f43f-a163-4de8-a7bb-a79301d0540f)
 
 ```
-{
-    "Version": "2012-10-17",
-    "Id": "Policy1698024307293",
-    "Statement": [
-        {
-            "Sid": "Stmt1698024303518",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::conectadosfiles/*"
-        }
-    ]
-}
+[
+  {
+    "AllowedHeaders": [
+        "*"
+    ],
+    "AllowedMethods": [
+        "PUT",
+        "HEAD",
+        "GET"
+    ],
+    "Allowedorigins": [
+        "*"
+    ],
+    "ExposeHeaders": []
+  }
+]
 ```
 
 * Listo con esta configuración ya podrás acceder a la información de tu bucket, regresa a Objects del bucket y crea dos carpetas
