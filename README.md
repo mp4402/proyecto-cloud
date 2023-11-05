@@ -129,7 +129,9 @@ docker exec -it base-de-datos psql -f backup.sql --host [Endpoint] --port [port]
 
 * Introduce la contraseña que habías establecido en tu RDS
 * Debes tener un print como este:
-[imagen]
+
+![Screenshot 2023-11-05 at 5 21 31 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/448466ea-178a-4c7e-9b06-67cf5bd9fb63)
+
 ##### Comprobación de creación
 * Este paso es opcional, solo es por si deseas confirmar si se ha realizado el script en tu postgres RDS
 * Entra al contenedor que cuenta con postgres
