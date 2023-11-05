@@ -42,12 +42,29 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 
 * Al tener el bucket levantado, entra y ve a la sección de Permissions -> Bucket policy:
 ![image](https://github.com/mp4402/proyecto-cloud/assets/61555440/bf0f1d1c-4357-45d1-b47e-85940e92c7a3)
-* Entra a editar, y ve al apartado de: Policy generator:
-* 
-
+* Entra a editar,
+* Copia el ARN de tu bucket
+* Ve al apartado de: Policy generator:
+* Paso 1:
+  ![Screenshot 2023-11-05 at 4 35 41 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/fc1a30a4-9d35-4c8d-a9bd-d5076881630d)
+* Paso 2: En el espacio de ARN, agrega el ARN que copiaste.
+  ![Screenshot 2023-11-05 at 4 40 31 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/5bc3b48e-531e-4df4-9a92-39ad69d2badd)
+* Da click en Add Statement.
+![Screenshot 2023-11-05 at 4 40 31 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/96fc55cf-2b2c-4de3-9491-9db7b09b57d2)
+* Luego, da click al botón: Generate Policy y copia el resultado
+* Entra a editar, copia y pega lo siguiente: Generate Policy.
+* Copia el resultado que te salio
+* Regresa a la edición de la Policy
+* Pega el resultado que obtuviste
+* Luego edita el apartado de Resurses: y agrega al final:
+```
+/*
+```
+* ![Screenshot 2023-11-05 at 4 45 39 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/05bff925-a3a4-4329-ba7b-8f4d2f91fe3c)
+* Guarda !
 * Ve a la sección de Permissions -> Cross-origin resource sharing (CORS):
 ![image](https://github.com/mp4402/proyecto-cloud/assets/61555440/6335f43f-a163-4de8-a7bb-a79301d0540f)
-* Entra a editar, copia y pega lo siguiente:
+
 ```
 {
     "Version": "2012-10-17",
