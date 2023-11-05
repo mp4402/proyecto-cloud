@@ -112,8 +112,9 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 * Crea la base de datos
 * Entra a la base de datos:
 * En ella en el primer menú, estaras en el apartado de: Connectivity & Security
+* Agrega tu security group que creaste anteriormente
+![Screenshot 2023-11-05 at 5 14 13 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/9d2124ff-ff7d-4f8a-9e40-610d2fbf1c46)
 
-![Screenshot 2023-11-03 at 6 00 20 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/88e44151-16aa-4cfe-8ac1-db28932b752b)
 
 * Toma nota del: Endpoint y Port.
 * Estos nos serviran más adelante.
