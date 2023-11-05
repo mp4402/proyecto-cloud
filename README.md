@@ -110,12 +110,7 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 ![Screenshot 2023-11-02 at 2 46 29 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/4c1c7dd5-dece-468e-b2d3-ee86bd4cfc0f)
 
 * Crea la base de datos
-* Entra a la base de datos:
-* En ella en el primer menú, estaras en el apartado de: Connectivity & Security
-* Agrega tu security group que creaste anteriormente
-![Screenshot 2023-11-05 at 5 14 13 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/9d2124ff-ff7d-4f8a-9e40-610d2fbf1c46)
-
-
+* Entra a la base de datos
 * Toma nota del: Endpoint y Port.
 * Estos nos serviran más adelante.
 #### Creación de tablas / migración a RDS
