@@ -50,7 +50,6 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 * Paso 2: En el espacio de ARN, agrega el ARN que copiaste.
   ![Screenshot 2023-11-05 at 4 40 31 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/5bc3b48e-531e-4df4-9a92-39ad69d2badd)
 * Da click en Add Statement.
-![Screenshot 2023-11-05 at 4 40 31 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/96fc55cf-2b2c-4de3-9491-9db7b09b57d2)
 * Luego, da click al botón: Generate Policy y copia el resultado
 * Entra a editar, copia y pega lo siguiente: Generate Policy.
 * Copia el resultado que te salio
