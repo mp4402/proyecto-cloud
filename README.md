@@ -66,20 +66,20 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 
 ```
 [
-  {
-    "AllowedHeaders": [
-        "*"
-    ],
-    "AllowedMethods": [
-        "PUT",
-        "HEAD",
-        "GET"
-    ],
-    "Allowedorigins": [
-        "*"
-    ],
-    "ExposeHeaders": []
-  }
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "PUT",
+            "HEAD",
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
 ]
 ```
 
