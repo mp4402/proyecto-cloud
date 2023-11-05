@@ -106,8 +106,7 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 
 * Deja el resto en Default y ve al apartado de Conectividad / Connectivity
 * Deja el public access activo y agrega el security group que creaste anteriormente
-  
-![Screenshot 2023-11-02 at 2 46 29 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/4c1c7dd5-dece-468e-b2d3-ee86bd4cfc0f)
+![Screenshot 2023-11-05 at 5 14 13 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/83e8b4d1-3aa8-4736-9ebe-755c2b4f8f95)
 
 * Crea la base de datos
 * Entra a la base de datos
