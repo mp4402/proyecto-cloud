@@ -6,13 +6,16 @@ Prueba para el CI
 ## Involucrados
 
 ## Servicios a utilizar
+# Docker
 * Amazon S3
 * Amazon RDS
 * Kubernetes Engine Google Cloud
 # Prerequisitos
+* Debes tener git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 ```
 git clone https://github.com/mp4402/proyecto-cloud.git
 ```
+* Debes de contar con Docker: https://docs.docker.com/get-docker/
 # Configuración de la nube
 ## Amazon
 Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon Console
