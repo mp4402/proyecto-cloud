@@ -228,6 +228,10 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Google
 *   En la consola de Gcloud dirigete a la carpeta del proyecto utilizando *cd*
 *   Ejecuta el comando para conectarte al clúster. Lo obtienes al clickear *Conectar* el clúster creado
 ![image](https://github.com/mp4402/proyecto-cloud/assets/69279232/3cb66780-51dd-4f31-98c9-d217969f1203)
+* Debes llenar la información del archivo app-deploymnet.yaml:
+     * pon todad la información, sin "" o ''. 
+![Screenshot 2023-11-06 at 11 01 37 AM](https://github.com/mp4402/proyecto-cloud/assets/61555440/875975fd-e64b-412f-bf58-2a25a7b32ca8)
+
 *   Ejecuta los siguientes comandos:
   ```
   kubectl apply -f app-deployment.yaml
