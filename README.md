@@ -212,7 +212,7 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Google
   ./google-cloud-sdk/bin/gcloud init
   ```
 * Inicia Gcloud, te pedirá que inicies sesión y crear un proyecto
-* En la terminal normal de la PC se instalará gke-gcloud-auth-plugin y kubectl. Ejecuta los siguientes comandos:
+* En la terminal normal de la PC se instalará gke-gcloud-auth-plugin y kubectl. Ejecuta los siguientes comandos (en Mac no se instala una shell u otro ejecutable, desde tu propia terminal):
   * gke-gcloud-auth-plugin
     ```
     gcloud components install gke-gcloud-auth-plugin
