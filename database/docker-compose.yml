@@ -2,7 +2,7 @@ version: '3.7'
 services:
     postgres:
         container_name: base-de-datos
-        image: carlosalvaradodock/database-info
+        image: mp4402/database-info
         ports:
           - '5438:5432'
 
