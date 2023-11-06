@@ -41,9 +41,9 @@ spec:
             - name: PGUSER
               value: YOUR-RDS-POSTGRES-USER
             - name: Path-EventImages
-              value: https://YOUR-BUCKET-NAME.s3.REGION-BUCKET.amazonaws.com/YOUR-FILE-NAME-FOR-EVENT-IMAGES/ 
+              value: https://YOUR-BUCKET-NAME.s3.REGION-BUCKET.amazonaws.com/YOUR-FILE-NAME-FOR-EVENT-IMAGES
             - name: Path-UserImages
-              value: https://YOUR-BUCKET-NAME.s3.REGION-BUCKET.amazonaws.com/YOUR-FILE-NAME-FOR-USER-IMAGES/ 
+              value: https://YOUR-BUCKET-NAME.s3.REGION-BUCKET.amazonaws.com/YOUR-FILE-NAME-FOR-USER-IMAGES
             - name: SecretKey
               value: YOUR-SECRET-KEY-AWS
           image: mp4402/proyecto-cloud
