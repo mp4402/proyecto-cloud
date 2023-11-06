@@ -195,7 +195,22 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Google
   & $env:Temp\GoogleCloudSDKInstaller.exe
     
   ```
-  
+  * Mac
+  * En este caso ve a este link: https://cloud.google.com/sdk/docs/install-sdk
+  * Ve al apartado de MacOS y sigue la guía
+  * Pon mucha atención al .tar.gz que vas a descargar, porque dependerá de la versión de tu procesador.
+ 
+  * En la carpeta donde descargaste el .tar.gz y lo descomprimes, ahí debes ejecutar los comandos siguientes.
+ 
+  * Si se te complica, debes entender que los únicos comandos que debes correr de la guía son:
+  ```
+  ./google-cloud-sdk/install.sh
+  ```
+  * Sigue las instrucciones. Si recomienda instalar pyhton, hazlo.
+  * Luego inicializa gcloud
+  ```
+  ./google-cloud-sdk/bin/gcloud init
+  ```
 * Inicia Gcloud, te pedirá que inicies sesión y crear un proyecto
 * En la terminal normal de la PC se instalará gke-gcloud-auth-plugin y kubectl. Ejecuta los siguientes comandos:
   * gke-gcloud-auth-plugin
