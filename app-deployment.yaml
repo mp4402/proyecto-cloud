@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: kompose convert
-    kompose.version: 1.26.0 (40646f47)
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.31.2 (HEAD)
   creationTimestamp: null
   labels:
     io.kompose.service: app
@@ -17,17 +17,41 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: kompose convert
-        kompose.version: 1.26.0 (40646f47)
+        kompose.cmd: kompose convert -f docker-compose.yml
+        kompose.version: 1.31.2 (HEAD)
       creationTimestamp: null
       labels:
+        io.kompose.network/proyecto-cloud-default: "true"
         io.kompose.service: app
     spec:
       containers:
-        - image: mp4402/proyecto-cloud
+        - env:
+            - name: AccessKey
+              value: YOUR-ACCESS-KEY-AWS
+            - name: BucketName
+              value: YOUR-BUCKET-NAME-AWS
+            - name: DB_HOST
+              value: YOUR-ENDPOINT-RDS-AWS
+            - name: FileName-EventImages
+              value: YOUR-FILE-NAME-FOR-EVENT-IMAGES
+            - name: FileName-UserImages
+              value: YOUR-FILE-NAME-FOR-USER-IMAGES
+            - name: PGPASSWORD
+              value: YOUR-RDS-POSTGRES-PASSWORD
+            - name: PGUSER
+              value: YOUR-RDS-POSTGRES-USER
+            - name: Path-EventImages
+              value: https://YOUR-BUCKET-NAME.s3.REGION-BUCKET.amazonaws.com/YOUR-FILE-NAME-FOR-EVENT-IMAGES/ 
+            - name: Path-UserImages
+              value: https://YOUR-BUCKET-NAME.s3.REGION-BUCKET.amazonaws.com/YOUR-FILE-NAME-FOR-USER-IMAGES/ 
+            - name: SecretKey
+              value: YOUR-SECRET-KEY-AWS
+          image: mp4402/proyecto-cloud
           name: app
           ports:
             - containerPort: 3000
+              hostPort: 3000
+              protocol: TCP
           resources: {}
       restartPolicy: Always
 status: {}

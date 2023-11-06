@@ -1,9 +1,17 @@
 version: "3.3"
 services:
   app:
-    #build: ./app
     image: mp4402/proyecto-cloud
     ports: 
       - "3000:3000"
-    # environment:
-    #   - DB_HOST=database-1.c4lnyuhwody1.us-east-1.rds.amazonaws.com
+    environment:
+      - DB_HOST=a
+      - PGPASSWORD=a
+      - PGUSER=a
+      - AccessKey=a
+      - SecretKey=a
+      - BucketName=a
+      - FileName-UserImages=a
+      - FileName-EventImages=a
+      - Path-UserImages=a
+      - Path-EventImages=a

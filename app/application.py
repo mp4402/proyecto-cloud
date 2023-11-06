@@ -10,10 +10,10 @@ conn = ""
 def openConnection():# Set up a connection to the postgres server.
     global conn
     conn = psycopg2.connect(host=os.environ['DB_HOST'],
-                            user="postgres",
+                            user=os.environ['PGUSER'],
                             port=5432,
                             database="postgres",
-                            password="postgres")
+                            password=os.environ['PGPASSWORD'])
     # conn = psycopg2.connect("dbname=postgres user=postgres")
 
 UPLOAD_FOLDER = os.getcwd() + '/static'
@@ -61,18 +61,18 @@ def aMayuscula(records):
 # upload S3
 def upload_image(file, image_key, _from):
     s3_client = boto3.client('s3', 
-                      aws_access_key_id="", 
-                      aws_secret_access_key="", 
+                      aws_access_key_id=os.environ['AccessKey'], 
+                      aws_secret_access_key=os.environ['SecretKey'], 
                       region_name='us-east-1'
                       )
 
-    BUCKET = "conectadosfiles"
+    BUCKET = os.environ['BucketName']
     IMAGE_KEY = image_key
     # Upload in-memory object to S3 bucket
     if (_from == 1):
-        s3_client.put_object(Body=file, Bucket=BUCKET, Key=f"UserPhotos/{IMAGE_KEY}", ContentType=file.content_type)
+        s3_client.put_object(Body=file, Bucket=BUCKET, Key=f"{os.environ['FileName-UserImages']}/{IMAGE_KEY}", ContentType=file.content_type)
     else:
-        s3_client.put_object(Body=file, Bucket=BUCKET, Key=f"EventPhotos/{IMAGE_KEY}", ContentType=file.content_type)
+        s3_client.put_object(Body=file, Bucket=BUCKET, Key=f"{os.environ['FileName-EventImages']}/{IMAGE_KEY}", ContentType=file.content_type)
 
 
 
@@ -153,7 +153,7 @@ def regristro():
             print("Archivo seleccionado")
             filename = nombre + "_" + secure_filename(file.filename)
             upload_image(file, filename, 1)
-            path_image = f"https://conectadosfiles.s3.us-east-1.amazonaws.com/UserPhotos/{filename}"
+            path_image = f"{os.environ['Path-UserImages']}/{filename}"
             openConnection()
             cursor = conn.cursor()
             sql_command = "SELECT id FROM public.user_data WHERE  public.user_data.correo = %s;"
@@ -248,7 +248,7 @@ def nueva_actividad():
             print("Archivo seleccionado")
             filename = nombre + "_fotoPortada_" + secure_filename(file.filename)
             upload_image(file, filename, 2)
-            path_image = f"https://conectadosfiles.s3.us-east-1.amazonaws.com/EventPhotos/{filename}"
+            path_image = f"{os.environ['Path-EventImages']}/{filename}"
         #INSERT en la tabla de eventos creados.
         openConnection()
         cursor = conn.cursor()
