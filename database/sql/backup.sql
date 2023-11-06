@@ -320,7 +320,7 @@ CREATE SEQUENCE public.usuario_evento_registrado_id_seq
 ALTER TABLE public.usuario_evento_registrado_id_seq OWNER TO postgres;
 
 --
--- Name: usuario_evento_creado_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: usuario_evento_registrado_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.usuario_evento_registrado_id_seq OWNED BY public.usuario_evento_registrado.id;
@@ -371,6 +371,12 @@ ALTER TABLE ONLY public.user_data ALTER COLUMN id SET DEFAULT nextval('public.us
 --
 
 ALTER TABLE ONLY public.usuario_evento_creado ALTER COLUMN id SET DEFAULT nextval('public.usuario_evento_creado_id_seq'::regclass);
+
+--
+-- Name: usuario_evento_registrado id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.usuario_evento_creado ALTER COLUMN id SET DEFAULT nextval('public.usuario_evento_registrado_id_seq'::regclass);
 
 
 --
@@ -489,6 +495,12 @@ SELECT pg_catalog.setval('public.user_data_id_seq', 1, false);
 --
 
 SELECT pg_catalog.setval('public.usuario_evento_creado_id_seq', 1, false);
+
+--
+-- Name: usuario_evento_registrado_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.usuario_evento_registrado_id_seq', 1, false);
 
 
 --
