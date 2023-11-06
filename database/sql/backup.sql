@@ -304,7 +304,26 @@ CREATE TABLE public.usuario_evento_registrado (
 
 
 ALTER TABLE public.usuario_evento_registrado OWNER TO postgres;
+--
+-- Name: usuario_evento_registrado_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
 
+CREATE SEQUENCE public.usuario_evento_registrado_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.usuario_evento_registrado_id_seq OWNER TO postgres;
+
+--
+-- Name: usuario_evento_creado_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.usuario_evento_registrado_id_seq OWNED BY public.usuario_evento_registrado.id;
 --
 -- Name: categoria id; Type: DEFAULT; Schema: public; Owner: postgres
 --
