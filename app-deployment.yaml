@@ -21,7 +21,6 @@ spec:
         kompose.version: 1.31.2 (HEAD)
       creationTimestamp: null
       labels:
-        io.kompose.network/proyecto-cloud-default: "true"
         io.kompose.service: app
     spec:
       containers:
