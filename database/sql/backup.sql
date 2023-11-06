@@ -376,7 +376,7 @@ ALTER TABLE ONLY public.usuario_evento_creado ALTER COLUMN id SET DEFAULT nextva
 -- Name: usuario_evento_registrado id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.usuario_evento_creado ALTER COLUMN id SET DEFAULT nextval('public.usuario_evento_registrado_id_seq'::regclass);
+ALTER TABLE ONLY public.usuario_evento_registrado ALTER COLUMN id SET DEFAULT nextval('public.usuario_evento_registrado_id_seq'::regclass);
 
 
 --
