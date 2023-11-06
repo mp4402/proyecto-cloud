@@ -19,6 +19,22 @@ git clone https://github.com/mp4402/proyecto-cloud.git
 # Configuración de la nube
 ## Amazon
 Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon Console
+### Usuario IAM
+* Ve a la sección de servicios y busca: IAM
+![Screenshot 2023-11-05 at 7 07 41 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/3f8f7c4b-3d0d-4e65-b362-0c73522f8217)
+
+* En la barra lateral izquierza busca USERS y crea un nuevo usuario
+* Pon nombre: conectados-access-nombre
+* En permissions options, ve al apartado de Attach policies directly
+* En el buscarod, busca: AmazonS3FullAccess, agregalo dándole al +
+![Screenshot 2023-11-05 at 7 10 44 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/89038eaa-7eee-454c-b5dd-9f521479dfdf)
+
+* Crea el usuario !
+
+* Accede a tu usuario recién creado y ve al apartado que dice: Create access key
+* Selecciona la opción de: Local Code. Y agrega una descripción.
+* OJO ! Al crearlas, te saldrá la opción de poder copiarlas, debes guardar que las necesitaremos más adelante.
+* Puedes descargar el .csv también. 
 ### Grupos de seguridad 
 *Este apartado será de utilidad para la base de datos*
 
