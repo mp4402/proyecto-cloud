@@ -26,7 +26,7 @@ Recuerda que para poder seguir estos pasos debes contar con una cuenta en Amazon
 * En la barra lateral izquierza busca USERS y crea un nuevo usuario
 * Pon nombre: conectados-access-nombre
 * En permissions options, ve al apartado de Attach policies directly
-* En el buscarod, busca: AmazonS3FullAccess, agregalo dándole al +
+* En el buscarod, busca: AmazonS3FullAccess, agregalo dejandolo seleccionado como se ve en la imagen:
 ![Screenshot 2023-11-05 at 7 10 44 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/89038eaa-7eee-454c-b5dd-9f521479dfdf)
 
 * Crea el usuario !
