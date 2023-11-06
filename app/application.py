@@ -394,7 +394,7 @@ def mis_actividades():
         currentTime = datetime.now()
         currentTime = fechaActual(currentTime)
         for row in REGISTRADOS:
-            fechaEvento = row[4]
+            fechaEvento = str(row[4])
             fechaEvento = datetime.strptime(fechaEvento,'%m-%d-%Y')
             fechaEvento = (fechaEvento.year * 10000000000) + (fechaEvento.month * 100000000) +  (fechaEvento.day * 1000000)
             if (currentTime - fechaEvento == 15):
