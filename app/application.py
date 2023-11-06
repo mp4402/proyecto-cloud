@@ -38,7 +38,7 @@ def autenticacion():
         return False
 
 def retornarFecha(fecha_hora):
-    return str(fecha_hora.day) + "-" +str(fecha_hora.month) + "-" + str(fecha_hora.year)
+    return str(fecha_hora.month) + "-" + str(fecha_hora.day) + "-" + str(fecha_hora.year)
 
 def retornarHora(fecha_hora):
     hora = ""
@@ -299,10 +299,10 @@ def cuenta():
         conn.commit()
         cursor.close()
         conn.close()
-        #delete en evento_comentarios
+        #delete en evento_comentario
         openConnection()
         cursor = conn.cursor()
-        sql_command = "DELETE FROM public.evento_comentarios WHERE evento_comentarios.id_user = %s"
+        sql_command = "DELETE FROM public.evento_comentario WHERE evento_comentario.id_user = %s"
         cursor.execute(sql_command, (id, ))
         conn.commit()
         cursor.close()
@@ -417,10 +417,10 @@ def mis_actividades():
                 conn.commit()
                 cursor.close()
                 conn.close()
-                #delete en evento_comentarios
+                #delete en evento_comentario
                 openConnection()
                 cursor = conn.cursor()
-                sql_command = "DELETE FROM public.evento_comentarios WHERE evento_comentarios.id_evento = %s"
+                sql_command = "DELETE FROM public.evento_comentario WHERE evento_comentario.id_evento = %s"
                 cursor.execute(sql_command, (id_Actividad, ))
                 conn.commit()
                 cursor.close()
@@ -473,7 +473,7 @@ def informacion_actividad(idActividad=None):
             id = session["sesion"]
             comentario = request.form["comentario"]
             print(f"comentario: {comentario}")
-            sql_command = "INSERT INTO public.evento_comentarios(id_evento, id_user, comentario)VALUES (%s, %s, %s);"
+            sql_command = "INSERT INTO public.evento_comentario(id_evento, id_user, comentario)VALUES (%s, %s, %s);"
             cursor.execute(sql_command, (id_evento, id, comentario, ))
             conn.commit()
             cursor.close()
@@ -490,7 +490,7 @@ def informacion_actividad(idActividad=None):
     cursor = conn.cursor()
     id = idActividad
     print(id)
-    sql_command = "SELECT user_data.nombre_usuario, evento_comentarios.comentario FROM (user_data INNER JOIN evento_comentarios ON user_data.id = evento_comentarios.id_user) where evento_comentarios.id_evento = %s"
+    sql_command = "SELECT user_data.nombre_usuario, evento_comentario.comentario FROM (user_data INNER JOIN evento_comentario ON user_data.id = evento_comentario.id_user) where evento_comentario.id_evento = %s"
     cursor.execute(sql_command, (id, ))
     comentarios = cursor.fetchall()
     print(comentarios)
@@ -528,10 +528,10 @@ def editar_actividad(idActividad=None):
             conn.commit()
             cursor.close()
             conn.close()
-            #delete en evento_comentarios
+            #delete en evento_comentario
             openConnection()
             cursor = conn.cursor()
-            sql_command = "DELETE FROM public.evento_comentarios WHERE evento_comentarios.id_evento = %s"
+            sql_command = "DELETE FROM public.evento_comentario WHERE evento_comentario.id_evento = %s"
             cursor.execute(sql_command, (idActividad, ))
             conn.commit()
             cursor.close()
@@ -557,7 +557,7 @@ def editar_actividad(idActividad=None):
             idComentario = request.form["idcomentario"]
             openConnection()
             cursor = conn.cursor()
-            sql_command = "DELETE FROM public.evento_comentarios WHERE evento_comentarios.id = %s"
+            sql_command = "DELETE FROM public.evento_comentario WHERE evento_comentario.id = %s"
             cursor.execute(sql_command, (idComentario, ))
             conn.commit()
             cursor.close()
@@ -574,7 +574,7 @@ def editar_actividad(idActividad=None):
     openConnection()
     cursor = conn.cursor()
     id = idActividad
-    sql_command = "SELECT evento_comentarios.id, user_data.nombre_usuario, evento_comentarios.comentario FROM (user_data INNER JOIN evento_comentarios ON user_data.id = evento_comentarios.id_user) where evento_comentarios.id_evento = %s"
+    sql_command = "SELECT evento_comentario.id, user_data.nombre_usuario, evento_comentario.comentario FROM (user_data INNER JOIN evento_comentario ON user_data.id = evento_comentario.id_user) where evento_comentario.id_evento = %s"
     cursor.execute(sql_command, (id, ))
     comentarios = cursor.fetchall()
     cursor.close()
@@ -676,7 +676,7 @@ def test_obtener_comentario(idActividad=None):
     openConnection()
     cursor = conn.cursor()
     id = idActividad
-    sql_command = "SELECT evento_comentarios.id, user_data.nombre_usuario, evento_comentarios.comentario FROM (user_data INNER JOIN evento_comentarios ON user_data.id = evento_comentarios.id_user) where evento_comentarios.id_evento = %s"
+    sql_command = "SELECT evento_comentario.id, user_data.nombre_usuario, evento_comentario.comentario FROM (user_data INNER JOIN evento_comentario ON user_data.id = evento_comentario.id_user) where evento_comentario.id_evento = %s"
     cursor.execute(sql_command, (id, ))
     comentarios = cursor.fetchall()
     cursor.close()
@@ -744,10 +744,10 @@ def test_editar_actividad(idActividad = None):
     conn.commit()
     cursor.close()
     conn.close()
-    #delete en evento_comentarios
+    #delete en evento_comentario
     openConnection()
     cursor = conn.cursor()
-    sql_command = "DELETE FROM public.evento_comentarios WHERE evento_comentarios.id_evento = %s"
+    sql_command = "DELETE FROM public.evento_comentario WHERE evento_comentario.id_evento = %s"
     cursor.execute(sql_command, (idActividad, ))
     conn.commit()
     cursor.close()
