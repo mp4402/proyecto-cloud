@@ -516,7 +516,7 @@ ALTER TABLE ONLY public.categoria
 --
 
 ALTER TABLE ONLY public.evento_categoria
-    ADD CONSTRAINT evento_categoria_pkey PRIMARY KEY (id_evento);
+    ADD CONSTRAINT evento_categoria_pkey PRIMARY KEY (id);
 
 
 --
@@ -524,7 +524,7 @@ ALTER TABLE ONLY public.evento_categoria
 --
 
 ALTER TABLE ONLY public.evento_comentario
-    ADD CONSTRAINT evento_comentario_pkey PRIMARY KEY (id_evento);
+    ADD CONSTRAINT evento_comentario_pkey PRIMARY KEY (id);
 
 
 --
@@ -556,7 +556,7 @@ ALTER TABLE ONLY public.user_data
 --
 
 ALTER TABLE ONLY public.usuario_evento_creado
-    ADD CONSTRAINT usuario_evento_creado_pkey PRIMARY KEY (id_user);
+    ADD CONSTRAINT usuario_evento_creado_pkey PRIMARY KEY (id);
 
 
 --
@@ -564,7 +564,7 @@ ALTER TABLE ONLY public.usuario_evento_creado
 --
 
 ALTER TABLE ONLY public.usuario_evento_registrado
-    ADD CONSTRAINT usuario_evento_registrado_pkey PRIMARY KEY (id_user);
+    ADD CONSTRAINT usuario_evento_registrado_pkey PRIMARY KEY (id);
 
 
 --
