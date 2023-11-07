@@ -165,7 +165,8 @@ docker exec -it base-de-datos psql --host [Endpoint]  --port 5432  --username po
 \d
 ```
 * Debes de tener este resultado:
-![Screenshot 2023-11-03 at 6 28 40 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/d7b64b31-8413-4c1a-b46a-473d922b800e)
+![Screenshot 2023-11-06 at 5 59 30 PM](https://github.com/mp4402/proyecto-cloud/assets/61555440/a0225e3c-85b4-454a-9bac-0d174408eb58)
+
 * Listo, esto significa  que si pudiste hacer los cambios
 * Para salir utiliza:
 ```
